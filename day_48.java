@@ -43,3 +43,41 @@ public class Hello {
 
 	}
 }
+public class solution {
+public static int[] primeEncoder(int[] input1,int input2)
+{
+    int ip=1;
+int prime=2;
+while(ip<input2){
+  prime++;
+    if(checkprime(prime)) ip++;
+    
+}
+int ans[]= new int[input1.length];
+for(int i=0;i<input1.length;i++){
+    ans[i]=prime+input1[i];
+}
+return ans;
+}
+
+public static void main(String[] args){
+  int arr[]={1,2,3,4,5};
+  int ans[] =primeEncoder(arr,5);
+  for(int j:ans)
+    System.out.print(j);
+}
+
+    public static boolean checkprime(int a) {
+        if (a <= 1)
+            return false;
+        if (a == 2 || a == 3)
+            return true;
+        if (a % 2 == 0 || a % 3 == 0)
+            return false;
+        for (int i = 5, w = 2; i * i <= a; i += w, w = 6 - w) {
+            if (a % i == 0)
+                return false;
+        }
+        return true;
+    }
+}
