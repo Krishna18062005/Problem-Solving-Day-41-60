@@ -81,3 +81,16 @@ public static void main(String[] args){
         return true;
     }
 }
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println(ans("Locoeeevvvededn"));
+  }
+  public static String ans(String input1){
+    if(input1.length()<10) return input1;
+    int k=input1.length()-2;
+    String ans=input1.charAt(0)+""+k+input1.charAt(input1.length()-1);
+    return ans;
+  }
+}
