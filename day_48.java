@@ -94,3 +94,25 @@ public class Main {
     return ans;
   }
 }
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      System.out.println(ans(3521,2452,1352));
+  }
+  public static int ans(int input1,int input2,int input3){
+    int ans=0;
+    String[] str={""+input1,""+input2,""+input3};
+    for(int i=0;i<4;i++){
+      int max=0;
+      int min=999999;
+      for(int j=0;j<3;j++){
+        int val=Integer.valueOf(str[j].charAt(i));
+        max=Math.max(max,val);
+        min=Math.min(min,val);
+      }
+      ans=ans*10+(max-min);
+    }
+    return ans;
+  }
+}
