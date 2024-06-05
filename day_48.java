@@ -20,3 +20,26 @@ public class Hello {
 	    return ans;
 	}
 }
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Repeated & Missing Integer
+		Scanner sc=new Scanner(System.in);
+		int d=0;
+		int s=0;
+		int n=0;
+		Set<Integer> a=new HashSet<>();
+		while(sc.hasNext()){
+		    int inp=sc.nextInt();
+		    n=(n<inp)?inp:n;
+		    
+		    if(a.contains(inp)){ d=inp;}
+		    else{ a.add(inp);s+=inp;}
+		}
+		
+		int ans=((n)*((n+1))/2)-s;
+		System.out.print(d+" "+ans);
+
+	}
+}
