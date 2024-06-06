@@ -27,3 +27,40 @@ public class Hello {
 
 	}
 }
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Sort Messages -Chronological Order
+		Scanner sc=new Scanner(System.in);
+		int N=sc.nextInt();
+		char[] person=new char[N];
+		int[] time=new int[N];
+		String[] message=new String[N];
+		for(int i=0;i<N;i++){
+		    person[i]=sc.next().charAt(0);
+		    String t=sc.next();
+		    time[i]=Integer.parseInt(t.replace(":",""));
+		    message[i]=sc.nextLine();
+		}
+		for(int i=0;i<N;i++){
+		    for(int j=i+1;j<N;j++){
+		        if(time[i]>time[j]){
+		            int temp=time[i];
+		            time[i]=time[j];
+		            time[j]=temp;
+		            char tem=person[i];
+		            person[i]=person[j];
+		            person[j]=tem;
+		            String te=message[i];
+		            message[i]=message[j];
+		            message[j]=te;
+		        }
+		    }
+		}
+		for(int i=0;i<N;i++){
+		    System.out.println(person[i]+":"+message[i].trim());
+		}
+
+	}
+}
