@@ -23,3 +23,19 @@ public class Hello {
 		
 	}
 }
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Left Shift-Smallest
+		Scanner sc=new Scanner(System.in);
+		String inp=sc.next();
+		int min=Integer.parseInt(inp);
+		for(int i=0;i<inp.length();i++){
+		    String val=inp.substring(i)+inp.substring(0,i);
+		    min=Math.min(min,Integer.parseInt(val));
+		}
+		System.out.print(min);
+
+	}
+}
