@@ -25,3 +25,38 @@ public class Hello {
 
 	}
 }
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Concatenate Four Matrices Pattern
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int[][] ar=new int[n][n];
+		for(int i=0;i<n;i++){
+		    for(int j=0;j<n;j++){
+		        ar[i][j]=sc.nextInt();
+		    }
+		}
+		for(int i=0;i<n*2;i++){
+		    int id=(i<n)?i:i-n;
+		    for(int j=0;j<n;j++){
+		        if((id+j>=n&&i<n)||(id<j&&i>=n)){
+		            System.out.print("* ");
+		        }
+		        else
+		        System.out.print(ar[id][j]+" ");
+		    }
+		    for(int k=0;k<n;k++){
+		        if((id>k&&i<n)||k+id<n-1&&i>=n){
+		            System.out.print("* ");
+		        }
+		        else
+		        System.out.print(ar[id][k]+" ");
+		    }
+		    System.out.println("");
+		}
+		
+
+	}
+}
