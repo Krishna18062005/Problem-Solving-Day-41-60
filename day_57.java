@@ -20,3 +20,27 @@ public class Hello {
 
 	}
 }
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Replace Words-K Characters
+		Scanner sc=new Scanner(System.in);
+		String w=sc.next();
+		int k=sc.nextInt();
+		sc.nextLine();
+		String s=sc.nextLine();
+		String ans="";
+		String l=w.substring(0,k).toLowerCase();
+		String ar[]=s.split(" ");
+		for(String i:ar){
+		    if(i.toLowerCase().startsWith(l)){
+		        ans+=w+" ";
+		    }
+		    else
+		    ans+=i+" ";
+		}
+		System.out.print(ans);
+
+	}
+}
